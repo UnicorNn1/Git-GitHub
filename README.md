@@ -212,3 +212,127 @@ If your team merges new features to the develop, then you will be behind, now yo
 ```
 
 If you are a sole developer that works by yourself then you can test the _git pull_ command by modifying some of the files from your remote repository and pull it using the _git pull_ command.
+
+### 20. Git clone
+
+GitHub allows to download a project using a URL. It is the same as downloading by clicking a download button from a website. To clone, go to desktop or any location and write the command _git clone URL_.
+
+For instance, to clone this repository, you need to run the following command
+
+```sh
+Asabeneh@DESKTOP-KGC1AKC MINGW64 ~$ cd Desktop
+Asabeneh@DESKTOP-KGC1AKC MINGW64 ~/Desktop$ git clone https://github.com/Asabeneh/10-days-of-git-and-github.git
+```
+
+### 21. Rename Branch
+
+To rename a current branch
+
+```sh
+git branch -m <newname>
+```
+
+To rename any branch
+
+```sh
+git branch -m <oldname> <newname>
+```
+
+### 22. Deleting Branch
+
+To delete a local branch
+
+```sh
+git branch -d branch-name
+git branch -D branch-name
+```
+
+To delete remote branch
+
+```sh
+git push <remote_name> :<branch_name>
+```
+
+or
+
+```sh
+git push <remote_name> --delete <branch_name>
+```
+
+### 23. The .gitignore file
+
+Any file you committed could be pushed to a remote repository but sometimes you may not want to push everything you have on your local repository. For instance sensitive data such as email, password, bank account, API Keys and others. Therefore, any files or folders that is listed on the .ignore file will not be tracked by Git. Create a .ignore file on the top level of your project directory, on this file put file names or folder you would like to ignore
+
+The .ignore file
+
+```sh
+test
+personal-data
+example.txt
+sensitive-info.txt
+```
+
+### 24 Forking
+
+A forking is a process of owning other repository. After you clicked on fork button of a certain repository you will see that that repository became in your repository list. You can try by clicking the fork button on this repository.
+
+Every repository that has some content in it has an active fork button on the right top corner.
+![fork](./images/fork.png)
+
+After forking, we can clone the repository and work on the cloned version of the project. After modifiying the original we can push to the forked verion of the repository. In addition, we can send a pull request to the original repo to contribute on the project.
+
+_Congratulations! Now, you have a solid foundation of Git and GitHub_
+
+## Git cheat sheet:
+
+Here you have the basic git commands which might be useful:
+
+```bash
+git --version     # Check the version
+git help          # Get help from git
+git help commit   # Get help for the commit command
+git config        # Get information about configuration
+git config --list # Check all what is configured
+git config --global user.name "username" # Configuring git user name
+git config --global user.email "email"   # Configuring git user email
+
+git init          # Initialize git repository local machine
+git status        # Check changes or status of file(s) in repository
+
+git add filename1.txt # Adding only one file
+git add filename1.txt filename2.txt # Add multiple files
+git add . # Add all the files and folders to the staging area
+
+git commit -a # Stage and write a commit message in Nano
+git commit -m "commit message" # Write a commit message after staging
+git commit -am "commit message" # Grab everything & skip the stage process
+
+git log  # See the history on the repository
+git log --oneline
+git log -<limit>
+git log --author ="name" # To check change by specific user
+git log --graph # Visualize the history
+
+git diff # Compare working copy in the repository
+git diff --staged # Compare files in the staging area
+
+git checkout -- filename # To get working copy back
+git reset HEAD filename # Removes from the staging area / (unstage)
+git checkout <branch-name> <path to file> # Checkout file from different branch
+git checkout <commit-id> -- <path to file> # Checkout file from specific commit
+
+git remote -v  # View remote repository-Urls
+git remote add <remote name> repository-Url # Add a new remote
+git push -u remote master # Push the file into github
+git checkout <commit-id> -- filename #
+
+git rm filename1 # Delete one tracked file
+git mv filename1 filename2 # Delete tracked file(s)
+git mv filename1 foldername/filename1 # Move file to a folder
+
+git branch # to list branches
+git branch branch-name # to create a branch
+git checkout branch-name # to checkout to a certain branch
+git checkout -b branch-name # to create a branch and checkout at the same time
+git merge branch-name # to merge a branch to the current branch
+```
