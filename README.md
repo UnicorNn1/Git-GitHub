@@ -1,4 +1,4 @@
-# Git and GitHub
+# Git & GitHub
 
 Git is a version control software. In one way or the other you may need to use a git and a GitHub together.
 
